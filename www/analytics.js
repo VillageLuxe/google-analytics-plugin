@@ -39,6 +39,11 @@ UniversalAnalyticsPlugin.prototype.trackException = function(description, fatal,
   cordova.exec(success, error, 'UniversalAnalytics', 'trackException', [description, fatal]);
 };
 
+UniversalAnalyticsPlugin.prototype.trackUncaughtExceptions = function(success, error) {
+  cordova.exec(success, error, 'UniversalAnalytics', 'trackUncaughtExceptions', []);
+};
+
+
 UniversalAnalyticsPlugin.prototype.trackTiming = function(category, intervalInMilliseconds, name, label, success, error) {
   if (typeof intervalInMilliseconds === 'undefined' || intervalInMilliseconds === null) {
     intervalInMilliseconds = 0;
