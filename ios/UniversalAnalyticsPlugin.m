@@ -49,6 +49,11 @@
   [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
 }
 
+- (void) trackUncaughtException: (CDVInvokedUrlCommand*) command
+{
+  [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
+}
+
 - (void) setUserId: (CDVInvokedUrlCommand*)command
 {
   CDVPluginResult* pluginResult = nil;
